@@ -1,0 +1,933 @@
+
+*
+    box-sizing: border-box
+
+$color-blue: #5473B6
+$color-yellow: #F8E31A
+
+@font-face
+    font-family: 'Rubik Mono One'
+    src: local('Rubik Mono One') // если у пользователя на компе есть, то шрифт загрузится с ПК
+    src: url(../fonts/RubikMonoOne-Regular.ttf)
+html
+    scroll-behavior: smooth
+header
+    background-image: url(../img/bacground4.jpg)
+    display: flex
+    justify-content: center
+.hr_box__mobile
+    display: none
+hr
+    margin: 0
+    border: none
+    border-top: 8px 
+    border-top-style: ridge 
+    width: 98%
+.hr-yellow
+    border-top-color:  $color-yellow 
+    animation-name: departure_hr-yellow
+    animation-duration: 2s // если не указать время анимация не заработает
+    animation-delay: 4.2s// задержка анимации чтобы сайт успел прогрузиться
+    animation-timing-function: ease // чтобы анимация была плавная
+    backface-visibility: hidden //на всякий случай, чтобы анимация не глючила
+    animation-fill-mode: backwards
+@keyframes departure_hr-yellow
+    0%
+        transform: translateX(90rem)
+    70%
+        transform: translateX(-4rem)
+
+.hr-blue
+    border-top-color: $color-blue
+    animation-name: departure_hr-blue
+    animation-duration: 2s // если не указать время анимация не заработает
+    animation-delay: 4.2s// задержка анимации чтобы сайт успел прогрузиться
+    animation-timing-function: ease // чтобы анимация была плавная
+    backface-visibility: hidden //на всякий случай, чтобы анимация не глючила
+    animation-fill-mode: backwards
+@keyframes departure_hr-blue
+    0%
+        transform: translateX(-90rem)
+    70%
+        transform: translateX(4rem)
+
+.hr_box
+    display: flex
+    flex-direction: column
+    align-items: center
+
+
+h1
+    font-size: 5vw
+    color: white
+    padding-top: 2vw
+    padding-bottom: 2vw
+    font-family: 'Rubik Mono One', sans-serif
+    font-weight: 700
+    text-shadow: 10px 10px 30px #5473B6,  -10px -10px 30px #F8E31A
+    -webkit-text-stroke: 0.5px white
+    -webkit-text-fill-color: transparent
+    letter-spacing: 10px
+    text-align: center
+    animation-name: departure_title
+    animation-duration: 2s // если не указать время анимация не заработает
+    animation-delay: 6s// задержка анимации чтобы сайт успел прогрузиться
+    animation-timing-function: ease // чтобы анимация была плавная
+    backface-visibility: hidden //на всякий случай, чтобы анимация не глючила
+    animation-fill-mode: backwards
+@keyframes departure_title
+    0%
+        opacity: 0 // чтобы плавнопоявлялось
+        //transform: translateX(-10rem)
+    70%
+        //transform: translateX(4rem)
+        
+    100%
+        opacity: 1
+
+
+.container
+    max-width: 1440px
+    margin: 0 auto
+
+
+.main-section
+    position: relative
+    min-height: 730px
+    background-image: url(../img/bacground4.jpg)
+    background-position: center
+    background-size: cover
+    overflow: hidden
+    &__nav
+        display: flex
+        justify-content: end
+        padding-top: 3vw
+        padding-bottom: 3vw
+    &__content
+        display: flex
+        max-width: 1440px
+        justify-content: space-around
+        //overflow: hidden
+
+    &__right-wraper
+        display: flex
+        flex-wrap: wrap
+        flex-direction: column
+        //justify-content: center
+        align-items: center
+            
+.left-wraper
+    display: flex
+    flex-wrap: wrap
+    align-content: flex-end
+.main-img
+    height: 40vw
+.nav-menu
+    &__button
+        margin-right: 3vw
+        &:last-child
+            margin-right: 5vw
+    
+.right-wraper
+    &__icon-box
+        margin-bottom: 60px
+    &__button-box
+        display: inline-flex
+        justify-content: center
+    &__logo-box
+        position: relative
+        width: 200px
+        margin-bottom: 250px
+        margin-left: 15px
+        z-index: 5
+    
+.icon-box
+    display: inline-flex
+.logo-box__item
+    position: absolute
+
+.blu_circle
+    width: 200px
+    top: 1px
+    left: 1px
+    animation-name: fli_blue
+    animation-duration: 1.5s
+    animation-iteration-count: 1
+    animation-timing-function: linear
+    animation-delay: 2.5s
+    animation-fill-mode: backwards
+    @keyframes fli_blue
+        0%
+            transform: rotate(560deg)
+            top: -600px
+            left: -700px
+        100%
+            transform: rotate(360deg)
+            top: 1px
+            left: 1px
+            
+.grap_pancr
+    width: 165px
+    top: 15px
+    left: 15px
+    animation-name: fli_grap_pancr
+    animation-duration: 0.2s
+    animation-iteration-count: 1
+    animation-timing-function: linear
+    animation-delay: 2s
+    animation-fill-mode: backwards
+    @keyframes fli_grap_pancr
+        0%
+            top: -400px
+        100%
+            transform: rotate(0deg)
+            top: 15px
+            left: 15px
+
+.lutador
+    width: 80px
+    top: 160px
+    left: 65px
+    animation-name: fli_lutador
+    animation-duration: .6s
+    animation-iteration-count: 1
+    animation-timing-function: linear
+    animation-delay: 2s
+    animation-fill-mode: backwards
+    @keyframes fli_lutador
+        0%
+            top: 1000px
+        100%
+            top: 160px
+            left: 65px
+
+.yellow_circle
+    width: 110px
+    top: 40px
+    left: 40px
+    animation-name: fli_yellow
+    animation-duration: 3s
+    animation-iteration-count: 1
+    animation-timing-function: linear
+    animation-delay: 2.5s
+    animation-fill-mode: backwards
+    @keyframes fli_yellow
+        0%
+            transform: rotate(-560deg)
+            top: 600px
+            left:  700px
+        50%
+            transform: rotate(-360deg)
+            top: 40px
+            left: 40px
+            
+        100%
+            transform: rotate(0deg)
+
+.wreslers
+    width: 70px
+    top: 60px
+    left: 60px
+    animation-name: fli_wreslers
+    animation-duration: .6s
+    animation-iteration-count: 1
+    animation-timing-function: linear
+    animation-delay: 2.5s
+    animation-fill-mode: backwards
+    @keyframes fli_wreslers
+        0%
+            top: 60px
+            left: 400px
+        50%
+            top: 60px
+            left: 400px
+            
+        100%
+            top: 60px
+            left: 60px
+
+.button
+    position: relative
+    display: inline-block
+    overflow: hidden
+    &:before
+        content: ''
+        position: absolute
+        top: 0px
+        left: 0px
+        width: 1.5em
+        height: 100%
+        background-color: rgba(#fff, 0.6)
+        transform: translateX(-2em) skewX(-45deg)
+    &:hover
+        &:before
+            animation: ligh-touch 1s
+
+@keyframes ligh-touch
+    from
+        transform: translateX(-2em) skewX(-45deg)
+    to
+        transform: translateX(15em) skewX(-45deg)
+
+.right-wraper__button
+    &:before
+        content: ''
+        position: absolute
+        top: 0px
+        left: 0px
+        width: 1.5em
+        height: 100%
+        background-color: rgba(#fff, 0.6)
+        transform: translateX(-2em) skewX(-45deg)
+        animation-name: ligh
+        animation-duration: 5s // общее время анимации
+        animation-iteration-count: infinite
+        overflow: hidden
+        
+
+@keyframes ligh
+    0%
+        transform: translateX(-2em) skewX(-45deg) 
+    20%
+        transform: translateX(15em) skewX(-45deg) // задаю интервалы между анимацией 20% от общего времени
+    100%
+        transform: translateX(15em) skewX(-45deg)
+.button
+    padding: 0px
+    background-color: black
+    width: 13em
+    height: 3em
+    border-radius: 100px
+    border-color: $color-yellow
+    overflow: hidden
+
+.btn
+    color: $color-yellow
+    font-size: 16px
+    padding: 3em 0
+    text-decoration: none
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+    font-family: sans-serif //без засечек
+    letter-spacing: 3px // расстояние между буквами
+    &_main
+        padding: 3em
+
+
+.icon-box__item
+    position: relative
+    margin-right: 15px
+    &:last-child
+        margin: 0
+i
+    font-size: 35px
+    color: #F8E31A
+    border: none
+    position: relative
+    
+i:hover
+    border-radius: 100px
+    border-color: $color-yellow
+    box-shadow: 0px 0px 30px 
+//вторая секция
+.second-section
+    background-color: $color-yellow
+    &__container
+        display: flexbox
+        padding-top: 20px
+        padding-bottom: 20px
+        min-height: 200px
+.container__wraper
+    width: 100%
+    display: inline-flex
+    justify-content: space-evenly
+    align-items: flex-start
+    margin-bottom: 20px
+    &:last-child
+        margin-bottom: 0
+.img__treners
+    width: 300px
+    margin-right: 20px
+.p-span
+    font-weight: bold
+    margin-bottom: 10px
+.name-span
+    margin-right: 28px
+.location-span
+    margin-right: 9px
+.regalis-span
+    margin-right: 20px
+p
+    font-size: 20px
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+    display: flex
+.p-wraper
+    max-width: 100%
+
+.wraper__img
+    position: relative
+.wraper-flag
+    position: absolute
+    width: 40px
+    height: 20px
+    top: 0
+    left: 0
+.flag-rus
+    display: block
+    &__first-stripe
+        height: 33.5%
+        background-color: white
+    &__second-stripe
+        height: 33.5%
+        background-color: blue
+    &__third-stripe
+        height: 33.5%
+        background-color: red
+
+.flag-spain
+    display: inline
+    &__first-stripe
+        height: 25%
+        background-color: red
+    &__second-stripe
+        height: 50%
+        background-color: orange
+        display: flex
+    &__third-stripe
+        height: 25%
+        background-color: red
+.Spain-emblem
+    width: 20%
+    margin-left: 25%
+//третья секция
+.third-section
+    background-image: url(../img/bacground4.jpg)
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+    text-align: center
+    &__container
+        min-height: 200px
+        padding-top: 30px
+        padding-bottom: 15px
+        display: flex
+        justify-content: flex-start
+        flex-direction: column
+        flex-wrap: wrap
+        align-items: center
+        position: relative
+.img__progress
+    width: 30vw
+    margin-bottom: 5vw
+
+.dropdown
+    &__wrapper
+        display: flex
+        cursor: pointer // чтобы меню на айфоне тоже раскрывалось
+        flex-direction: column
+        position: absolute
+        top: 38vw
+        background-color: black
+        font-weight: bold
+        color: $color-yellow
+        z-index: 3
+        &:hover >.dropdown__item // знак ">", означает  при наведении на родителя отображается только его прямой потомок(на будующее если надо будет добавить подменю)
+            display: flex
+        &:focus-within >.dropdown__item //свойство focus-within, чтобы при наведении tab открывалось меню, просто focus не сработает
+            display: flex
+    &__item
+        text-align: start
+        color: $color-yellow
+        text-decoration: none
+        white-space: nowrap
+        display: none
+    &__link
+        font-size: 20px
+        line-height: 25px
+        width: 100%
+        text-decoration: none
+        color: $color-yellow
+        padding: 1px
+        letter-spacing: 5px //мeжбуквенное рассояние
+        &:hover
+            color: black
+            background: $color-yellow
+        &:focus // действия при нажатии tab
+            outline: none // отключаем заводскую подсветку при на жатии tab
+            color: black
+            background: $color-yellow
+//футер
+.footer
+    background-image: url(../img/bacground4.jpg)
+    &__container
+        padding: 15px
+        min-height: 300px
+        display: flex
+        flex-direction: column
+        align-items: center
+    &__icon-box  
+        padding-top: 20px
+iframe
+    width: 70%
+    min-height: 300px
+    position: relative
+    z-index: 0
+    
+
+//горизонтальный планшет
+@media (max-width: 1199px)
+    .container
+        width: 960px
+    .main-section
+        position: relative
+        min-height: 600px
+    .main-img
+        height: 50vw
+    .img__treners
+        width: 30vw
+        margin-right: 20px
+    .p-span
+        font-weight: bold
+        margin-bottom: 10px
+    .name-span
+        margin-right: 4.5vw
+    .location-span
+        margin-right: 1vw
+    .regalis-span
+        margin-right: 3vw
+    p
+        font-size: 3vw
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+        display: flex
+    .p-wraper
+        max-width: 100%
+
+    .wraper__img
+        position: relative
+    .wraper-flag
+        position: absolute
+        width: 5vw
+        height: 3vw
+        top: 0
+        left: 0
+    .flag-rus
+        display: block
+        &__first-stripe
+            height: 33.5%
+            background-color: white
+        &__second-stripe
+            height: 33.5%
+            background-color: blue
+        &__third-stripe
+            height: 33.5%
+            background-color: red
+
+    .flag-spain
+        display: inline
+        &__first-stripe
+            height: 25%
+            background-color: red
+        &__second-stripe
+            height: 50%
+            background-color: orange
+            display: flex
+        &__third-stripe
+            height: 25%
+            background-color: red
+    .Spain-emblem
+        width: 20%
+        margin-left: 25%
+    //третья секция
+    .third-section
+        background-image: url(../img/bacground4.jpg)
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+        text-align: center
+        &__container
+            min-height: 200px
+            padding-top: 30px
+            padding-bottom: 15px
+            display: flex
+            justify-content: flex-start
+            flex-direction: column
+            flex-wrap: wrap
+            align-items: center
+    .img__progress
+        width: 30vw
+    .arrow
+        width: 0
+        height: 0
+        padding: 1px
+        border-top: 10px solid $color-yellow
+        border-right: 7px solid transparent
+        border-left: 7px solid transparent
+    .dropdown
+        &__item
+            display: none
+        &__wrapper
+            &:active >.dropdown__item 
+                display: flex
+        &__link
+            font-size: 20px
+            line-height: 25px
+            width: 100%
+            text-decoration: none
+            color: $color-yellow
+            padding: 1px
+            letter-spacing: 5px //мeжбуквенное рассояние
+        &__arrow
+            position: absolute
+            top: 8px
+            &:active //.dropdown__item // знак ">", означает  при наведении на родителя отображается только его прямой потомок(на будующее если надо будет добавить подменю)
+                display: flex
+                border-top-color: black
+                background: $color-yellow
+        
+//футер
+.footer
+    background-image: url(../img/bacground4.jpg)
+    &__container
+        padding: 15px
+        min-height: 300px
+        display: flex
+        flex-direction: column
+        align-items: center
+    &__icon-box  
+        padding-top: 20px
+iframe
+    width: 70%
+    min-height: 300px
+
+//вертикальеный планшет
+@media  (max-width: 991px)
+    .container
+        width: 720px
+    .main-img
+        height: 67vw
+    h1
+        font-size: 4.5vw
+    
+//горизонтальный телефон
+@media (max-width: 767px)
+    .container
+        width: 540px
+        min-height: 5vw
+    hr
+        margin: 0
+        border: none
+        border-top: 4px 
+        border-top-style: ridge 
+        width: 98%
+    .main-section
+        position: relative
+        min-height: 300px
+    h1
+        font-size: 4vw
+        color: white
+        padding-top: 2vw
+        padding-bottom: 2vw
+        font-family: 'Rubik Mono One', sans-serif
+        font-weight: 700
+        text-shadow: 10px 10px 30px #5473B6,  -10px -10px 30px #F8E31A
+        -webkit-text-stroke: 0.5px white
+        -webkit-text-fill-color: transparent
+        letter-spacing: 10px
+        text-align: center
+    .main-img
+        height: 40vw
+    .right-wraper
+        &__icon-box
+            margin-bottom: 20px
+        &__button-box
+            display: inline-flex
+            justify-content: center
+        &__logo-box
+            position: relative
+            width: 150px
+            margin-bottom: 150px
+            margin-left: 15px
+            z-index: 5
+    
+    .icon-box
+        display: inline-flex
+    .logo-box__item
+        position: absolute
+        width: 250px
+    .blu_circle
+        width: 135px
+        top: 1px
+        left: 1px
+        animation-name: fli_blue
+        animation-duration: 3s
+        animation-iteration-count: 1
+        animation-timing-function: linear
+        @keyframes fli_blue
+            0%
+                transform: rotate(560deg)
+                top: -600px
+                left: -700px
+            50%
+                transform: rotate(360deg)
+                top: 1px
+                left: 1px
+                
+            100%
+                transform: rotate(0deg)
+
+    .grap_pancr
+        width: 110px
+        top: 11px
+        left: 11px
+        animation-name: fli_grap_pancr
+        animation-duration: 0.5s
+        animation-iteration-count: 1
+        animation-timing-function: linear
+        @keyframes fli_grap_pancr
+            0%
+                top: -400px
+            50%
+                transform: rotate(0deg)
+                top: 11px
+                left: 11px
+                
+            100%
+                transform: rotate(0deg)
+
+    .lutador
+        width: 62px
+        top: 108px
+        left: 37px
+        animation-name: fli_lutador
+        animation-duration: 0.5s
+        animation-iteration-count: 1
+        animation-timing-function: linear
+        @keyframes fli_lutador
+            0%
+                top: 900px
+            //50%
+                ransform: rotate(0deg)
+                top: 208px
+                left: 37px
+                
+            100%
+                transform: rotate(0deg)
+
+    .yellow_circle
+        width: 77px
+        top: 25px
+        left: 25px
+        animation-name: fli_yellow
+        animation-duration: 3s
+        animation-iteration-count: 1
+        animation-timing-function: linear
+        @keyframes fli_yellow
+            0%
+                transform: rotate(-560deg)
+                top: 600px
+                left:  700px
+            50%
+                transform: rotate(-360deg)
+                top: 25px
+                left: 25px
+                
+            100%
+                transform: rotate(0deg)
+
+    .wreslers
+        width: 50px
+        top: 41px
+        left: 41px
+        animation-name: fli_wreslers
+        animation-duration: .5s
+        animation-iteration-count: 1
+        animation-timing-function: linear
+        @keyframes fli_wreslers
+            0%
+                top: 41px
+                left: 600px
+            50%
+                transform: rotate(0deg)
+                left: 400px
+                top: 41px
+            100%
+                transform: rotate(0deg)
+
+    .button
+        position: relative
+        display: inline-block
+        overflow: hidden
+        &:before
+            content: ''
+            position: absolute
+            top: 0px
+            left: 0px
+            width: 1.5em
+            height: 100%
+            background-color: rgba(#fff, 0.6)
+            transform: translateX(-2em) skewX(-45deg)
+        &:hover
+            &:before
+                animation: ligh-touch 0.5s
+
+    @keyframes ligh-touch
+        from
+            transform: translateX(-2em) skewX(-45deg)
+        to
+            transform: translateX(15em) skewX(-45deg)
+
+    .right-wraper__button
+        &:before
+            content: ''
+            position: absolute
+            top: 0px
+            left: 0px
+            width: 1.5em
+            height: 100%
+            background-color: rgba(#fff, 0.6)
+            transform: translateX(-2em) skewX(-45deg)
+            animation-name: ligh
+            animation-duration: 5s // общее время анимации
+            animation-iteration-count: infinite
+            
+
+    @keyframes ligh
+        0%
+            transform: translateX(-2em) skewX(-45deg) 
+        20%
+            transform: translateX(15em) skewX(-45deg) // задаю интервалы между анимацией 20% от общего времени
+        100%
+            transform: translateX(15em) skewX(-45deg)
+
+    .btn
+        font-size: 12px
+        line-height: 1px
+        letter-spacing: 2px // расстояние между буквами
+    .button
+        padding: 0px
+        background-color: black
+        width: 9.3em
+        height: 2.5em
+        border-radius: 100px
+        border-color: $color-yellow
+        line-height: 12px
+
+    .icon-box__item
+        position: relative
+        margin-right: 15px
+        &:last-child
+            margin: 0
+    i
+        font-size: 20px
+        color: #F8E31A
+        border: none
+        position: relative
+    i:hover
+        border-radius: 100px
+        border-color: $color-yellow
+        box-shadow: 0px 0px 30px 
+
+//вертикальный телефон
+@media (max-width: 575px)
+    .container
+        width: 100%
+    .main-section
+        height: 770px
+        overflow: hidden
+        &__container
+            margin-top: 20px
+            
+    .hr_box
+        display: none
+    .hr_box__mobile
+        display: block
+    h1
+        font-size: 10vw
+        color: white
+        padding-top: 2vw
+        padding-bottom: 2vw
+        font-family: 'Rubik Mono One', sans-serif
+        font-weight: 700
+        text-shadow: 3vw 3vw 8vw #5473B6,  -3vw -3vw 8vw #F8E31A
+        -webkit-text-stroke: 0.5px white
+        -webkit-text-fill-color: transparent
+        letter-spacing: 4vw
+        text-align: center
+        
+    .left-wraper
+        position: absolute
+        left: -212px
+        display: flex
+        flex-wrap: wrap
+        align-content: flex-end
+    .main-img
+        height: 657px
+    .right-wraper
+        padding-top: 30px
+        &__icon-box
+            display: none
+            margin-bottom: 20px
+        &__button-box
+            display: inline-flex
+            justify-content: center
+            margin-left: 150px
+        &__logo-box
+            position: relative
+            width: 75px
+            margin-bottom: 160px
+            margin-left: 80px
+            z-index: 5n
+    .nav-menu
+        position: fixed
+        display: flex
+        flex-wrap: wrap
+        align-items: end
+        top: 0
+        right: -50vw
+        height: 30vh
+        width: 100%
+        z-index: 7
+        transition: 1s all
+        flex-direction: column
+        justify-content: space-evenly
+        margin-right: 0
+        &__button
+            margin-right: 0
+            &:last-child
+                margin-right: 0
+    .hamburger
+        width: 45px
+        position: fixed
+        top: 8px
+        left: 85%
+        height: 14px
+        z-index: 11
+        &__span
+            height: 2px
+            width: 100%
+            display: block
+            background: $color-yellow
+            margin-bottom: 4px
+            transition: 1s all
+            &:last-child
+                margin-bottom: 0
+    .hamburger_active
+        .hamburger__span
+            margin-bottom: -2px
+            &:nth-last-child(1)
+                transform: translateY(3px) rotate(-45deg)
+            &:nth-last-child(2)
+                display: none
+            &:nth-last-child(3)
+                transform: translateY(3px) rotate(45deg)
+    .nav-menu_active
+        right: 0
+    .dropdown
+        &__link
+            font-size: 18px
+            line-height: 25px
+            letter-spacing: 2px
+                
+
+
+
+
+
+
+
+    
